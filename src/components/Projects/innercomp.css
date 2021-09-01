@@ -1,0 +1,58 @@
+.project__info {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  animation: flip 0.4s ease-in-out forwards 1;
+}
+@keyframes flip {
+  from {
+    opacity: 0;
+    transform: scaleX(0%);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(100%);
+  }
+}
+.project__info h2 {
+  color: whitesmoke;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+.project__info > div {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.project__info > div > p {
+  margin: 5px 10px;
+  padding: 5px 10px;
+  color: rgb(206, 206, 206);
+  font-size: 13px;
+  border: 1px solid rgb(206, 206, 206);
+  border-radius: 5px;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+.project__closeBtn {
+  position: absolute;
+  background: none;
+  border: none;
+  color: white;
+  top: 10%;
+  outline: none;
+  cursor: pointer;
+  right: 10%;
+  transform: translate(-10%, -10%);
+  opacity: 1;
+  transition: all 0.4s ease-in;
+}
+.project__closeBtn:hover {
+  opacity: 0.6;
+}

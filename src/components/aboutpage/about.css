@@ -1,0 +1,140 @@
+.about__main {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: 0.05fr 1fr 0.05fr;
+  grid-template-rows: 0.05fr 1fr 0.05fr;
+}
+
+.about__InnerDiv {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: grid;
+  width: 100%;
+  height: 90vh;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-areas:
+    ". about__backBtn about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading . ."
+    ". about__backBtn about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading . ."
+    ". about__imgSec about__imgSec . about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec ."
+    ". about__imgSec about__imgSec . about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec ."
+    ". about__imgSec about__imgSec . about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec ."
+    ". about__imgSec about__imgSec . about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec ."
+    ". . . . . . . . . . . .";
+}
+.about__backBtn {
+  grid-area: about__backBtn;
+  align-self: center;
+  justify-self: center;
+  width: 2rem;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+.about__backBtn:hover {
+  opacity: 0.9;
+  transform: scale(0.9);
+}
+
+.about__mainHeading {
+  grid-area: about__mainHeading;
+  align-self: center;
+  justify-self: center;
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  cursor: default;
+}
+
+.about__imgSec {
+  grid-area: about__imgSec;
+  width: 100%;
+  height: auto;
+  align-self: center;
+  justify-self: center;
+  object-fit: cover;
+  cursor: pointer;
+}
+.about__imgSec img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  background-color: #ff535c;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  animation: images 0.6s ease-in-out forwards 1;
+}
+
+.about__descSec {
+  grid-area: about__descSec;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  overflow-y: scroll;
+  cursor: default;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.about__descSec::-webkit-scrollbar {
+  display: none;
+}
+.about__descSec > h2 {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  line-height: 23px;
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+.about__descSec a {
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  width: 20%;
+  padding: 5px 0;
+  color: black;
+  opacity: 0.8;
+  padding: 0.5rem 0;
+  transition: all 0.4s ease-in-out;
+}
+.about__descSec a:hover {
+  opacity: 1;
+}
+
+@keyframes images {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about__InnerDiv {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+    grid-template-areas:
+      ". about__backBtn about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading . ."
+      ". about__backBtn about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading about__mainHeading . ."
+      ". . . . about__imgSec about__imgSec about__imgSec about__imgSec . . . ."
+      ". . . . about__imgSec about__imgSec about__imgSec about__imgSec . . . ."
+      ". . . . about__imgSec about__imgSec about__imgSec about__imgSec . . . ."
+      ". . . . about__imgSec about__imgSec about__imgSec about__imgSec . . . ."
+      ". about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec ."
+      ". about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec ."
+      ". about__descSec about__descSec  about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec ."
+      ". about__descSec about__descSec  about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec ."
+      ". about__descSec about__descSec  about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec ."
+      ". about__descSec about__descSec  about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec about__descSec ."
+      ". . . . . . . . . . . .";
+  }
+  .about__descSec a {
+    width: 50%;
+  }
+}

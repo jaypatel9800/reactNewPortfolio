@@ -1,0 +1,131 @@
+.mainpage__main {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-areas:
+    ". . . . . . . . . . . ."
+    ". . . . . . . . . . . mainpage__githubLogo"
+    ". . mainpage__first mainpage__first mainpage__first mainpage__first mainpage__first mainpage__first . . . mainpage__linkdinLogo"
+    ". . . mainpage__second mainpage__second mainpage__second mainpage__second mainpage__second mainpage__second . . mainpage__twitterLogo"
+    ". . . .mainpage__third mainpage__third mainpage__third mainpage__third mainpage__third mainpage__third . ."
+    ". . . . . . . . . . . ."
+    "mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button"
+    ". . . . . . . . . . . .";
+}
+.mainpage__main > * {
+  display: flex;
+  align-items: center;
+}
+.mainpage__first {
+  grid-area: mainpage__first;
+}
+.mainpage__second {
+  grid-area: mainpage__second;
+}
+.mainpage__third {
+  grid-area: mainpage__third;
+}
+.mainpage__main h1 {
+  color: rgb(20, 20, 20);
+  font-size: 2.9rem;
+  font-weight: 400;
+  font-family: "Palette Mosaic", cursive;
+}
+.mainpage__githubLogo {
+  grid-area: mainpage__githubLogo;
+  border-radius: 20px 0 0 20px;
+  background: rgba(244, 131, 82, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+}
+.mainpage__linkdinLogo {
+  grid-area: mainpage__linkdinLogo;
+  border-radius: 20px 0 0 20px;
+  background: rgba(254, 185, 156, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+}
+.mainpage__twitterLogo {
+  grid-area: mainpage__twitterLogo;
+  border-radius: 20px 0 0 20px;
+  background: rgba(207, 175, 183, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(15.5px);
+  -webkit-backdrop-filter: blur(15.5px);
+}
+.mainpage__button {
+  grid-area: mainpage__button;
+  align-self: center;
+  justify-self: center;
+  background-color: transparent;
+  border: 1px solid black;
+  padding: 0.5rem 2rem;
+  border-radius: 20px;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  outline: none;
+  animation: size 1s ease-in-out infinite forwards alternate;
+}
+.social {
+  width: 40px;
+  height: 40px;
+  margin: 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.social:hover,
+.mainpage__button:hover {
+  transform: scale(0.9);
+  opacity: 0.9;
+}
+.mainpage__link {
+  text-decoration: none;
+  color: rgb(39, 39, 39) !important;
+}
+.mainpage__hoverText {
+  border-bottom: 2px solid black;
+  cursor: pointer;
+  animation: line 0.4s ease-in-out forwards 1;
+}
+
+@keyframes line {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scalex(1);
+  }
+}
+@keyframes size {
+  0% {
+    transform: scale(0.92);
+  }
+  50% {
+    transform: translate(1);
+  }
+  100% {
+    transform: translate(0.92);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .mainpage__main {
+    grid-template-areas:
+      ". . . . . . . . . . . ."
+      ". . . . . . . . . . . mainpage__githubLogo"
+      ". . mainpage__first mainpage__first mainpage__first mainpage__first mainpage__first mainpage__first . . . mainpage__linkdinLogo"
+      ". . mainpage__second mainpage__second mainpage__second mainpage__second mainpage__second mainpage__second . . . mainpage__twitterLogo"
+      ". . mainpage__third mainpage__third mainpage__third mainpage__third mainpage__third mainpage__third . . . ."
+      ". . . . . . . . . . . ."
+      "mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button mainpage__button"
+      ". . . . . . . . . . . .";
+  }
+  .mainpage__main h1 {
+    font-size: 2.2rem;
+  }
+}

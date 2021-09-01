@@ -1,0 +1,79 @@
+.skills__main {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: 0.05fr 1fr 0.05fr;
+  grid-template-rows: 0.05fr 1fr 0.05fr;
+}
+.skills__innerDiv {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: grid;
+  width: 100%;
+  height: 90vh;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-areas:
+    ". skills__backBtn skills__mainHeading skills__mainHeading skills__mainHeading skills__mainHeading skills__mainHeading skills__mainHeading skills__mainHeading skills__mainHeading . ."
+    ". skills__backBtn skills__mainHeading skills__mainHeading skills__mainHeading skills__mainHeading skills__mainHeading skills__mainHeading skills__mainHeading skills__mainHeading . ."
+    ". skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items ."
+    ". skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items ."
+    ". skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items ."
+    ". skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items ."
+    ". skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items ."
+    ". skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items ."
+    ". skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items skills__items ."
+    ". . . . . . . . . . . .";
+}
+.skills__mainHeading {
+  grid-area: skills__mainHeading;
+  align-self: center;
+  justify-self: center;
+  font-family: "Dancing Script", cursive;
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+}
+
+.skills__backBtn {
+  grid-area: skills__backBtn;
+  align-self: center;
+  justify-self: center;
+  width: 2rem;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+.skills__backBtn:hover {
+  opacity: 0.9;
+  transform: scale(0.9);
+}
+.skills__items {
+  grid-area: skills__items;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-auto-rows: 200px;
+  overflow-y: scroll;
+  place-items: center;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.skills__items::-webkit-scrollbar {
+  display: none;
+}
+.skills__items > img {
+  width: 130px;
+  height: auto;
+}
+
+@media screen and (max-width:800px){
+  .skills__items{
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-auto-rows: 170px;
+  }
+}
